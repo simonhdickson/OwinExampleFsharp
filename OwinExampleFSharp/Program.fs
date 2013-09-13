@@ -9,7 +9,7 @@ open ImpromptuInterface.FSharp
 type Move() =
     inherit Hub()
     member this.Action(x: int, y: int) : unit =
-        this.Clients.All?Action(x, y)
+        this.Clients.Others?shapemoved(x, y);
 
 type Startup() =
     member x.Configuration(app: Owin.IAppBuilder) =
